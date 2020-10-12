@@ -1,0 +1,82 @@
+@media screen and (min-width: 100px) {}
+
+// 700px and up
+@media screen and (min-width: $media-small) {
+
+  .card {
+    display: block;
+    text-decoration: none;
+  }
+  .article {
+    &__container {
+      grid-column: 1/span 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+    &__card {
+      // margin-right: 1rem;
+      padding: 1rem;
+      
+      border: 1px solid $color-grey-6;
+    }
+
+    &__content {}
+
+    &__category {
+      color: $secondary-type-color;
+    }
+
+    &__featured {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    &__header {
+      
+     
+    }
+    &__source {
+      font-weight: 800;
+      text-transform: uppercase;
+      border-bottom: dashed $color-tri-1 1px;
+    }
+  }
+
+  .featured {
+    border: 1px solid $color-tri-1;
+    &__img {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 4;
+      height: 100%;
+      img {
+
+      }
+
+    }
+
+    &__content {
+      grid-column: 3 / span 4;
+      grid-row: 1 / span 4;
+
+    }
+
+    &__category {}
+
+    &__header {
+      color: $color-grey-1;
+      background-color: $color-tri-1;
+
+    }
+  }
+}
+
+// 960px 
+
+@media screen and (min-width: $media-med) {}
+
+@media screen and (min-width: $media-large) {}
+
+@media screen and (min-width: $media-xlarge) {}

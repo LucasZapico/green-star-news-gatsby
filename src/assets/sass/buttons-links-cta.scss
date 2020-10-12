@@ -1,0 +1,117 @@
+button {
+    font-family: $base-family;
+}
+
+a {
+    font-family: $base-family;
+    color: $primary-type-color;
+
+}
+
+.btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    &__icon {
+        svg {
+            margin-left: .2rem;
+            font-size: 1.5rem;
+         
+        }
+        &--light {
+                
+        }
+        &--dark {
+            fill: $color-light;
+        }
+
+    }
+    &__primary {
+        &--light {
+            background-color: $color-pri-1;
+            color: $color-light;
+            // background: $color-gradient-one;
+
+            &:hover {}
+
+            &:focus {}
+        }
+
+        &--dark {
+            background-color: $color-sec-1;
+            &:hover {}
+
+            &:focus {}
+        }
+    }
+
+    &__secondary {
+
+        &--light {
+            &:hover {}
+
+            &:focus {}
+        }
+
+        &--dark {
+            &:hover {}
+
+            &:focus {}
+        }
+    }
+}
+
+.cta,
+.link {
+    &__icon {
+                &--light {
+            svg {
+                margin-left: .2rem;
+                font-size: 1.5rem;
+             
+            }       
+        }
+        &--dark {
+            svg {
+                margin-left: .2rem;
+                font-size: 1.5rem;
+                fill: $color-sec-1; 
+            }
+            
+        }
+
+    }
+    &__primary {
+        &--light {
+            color: $color-pri-1;
+            &:hover {}
+
+            &:focus {}
+
+        }
+
+        &--dark {
+            color: $color-sec-1;
+            &:hover {}
+
+            &:focus {}
+        }
+    }
+
+    &__secondary {
+        &--light {
+            &:hover {}
+
+            &:focus {}
+        }
+
+        &--dark {
+            &:hover {}
+
+            &:focus {}
+        }
+    }
+}

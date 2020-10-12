@@ -1,0 +1,47 @@
+// footer mobile
+
+.footer {
+  hr {
+    margin-top: 3rem;
+    background-color: $color-grey-8;
+  }
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 3rem;
+  color: $primary-type-color;
+  background-color: $color-pri-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // min-height: 500px;
+  &--contact {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &--email {
+    padding-bottom: 1rem;
+  }
+  .contact {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    &--contact {
+      padding-top: 3rem;
+      flex-direction: row;
+      & > div {
+        flex-basis: 50%;
+      }
+    }
+  }
+}

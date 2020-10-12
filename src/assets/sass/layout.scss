@@ -1,0 +1,56 @@
+html, body {
+    font-family: $base-family;
+    
+  }
+  * {
+      box-sizing: border-box;
+  }
+  
+  .sidenav {
+      &__container {
+          background-color: $bg-primary;
+          position: fixed;
+          width: 100%;
+          height:  100%;
+      }
+  }
+
+  main {
+      padding-top: 100px;
+  }
+
+  .header {
+      &__container {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+       grid-template-rows: 1fr 1fr 1fr 1fr;   
+      }
+
+  }
+
+  .header {
+      &.featured {
+        grid-column: 2/ span 4;
+        grid-row: 1 / span 4;
+      }
+      &.latest {
+        grid-column: 1/ span 1;
+        grid-row: 1 / span 4;
+        &__title {
+            background-color: $color-qur-1;
+        }
+      }
+  }
+
+  .content {
+      display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .sourcelist {
+      &__item {
+          padding: .2rem;
+          cursor: pointer;
+          border: dashed 1px $color-grey-5;
+      }
+  }

@@ -1,0 +1,168 @@
+/***
+**
+** MOBILE
+**
+**
+***/
+
+.nav {
+  z-index: 3;
+  position: fixed;
+  background-color: $bg-primary;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  .mark {
+    
+    // width: 20vw;
+    svg {
+     
+      width: 50px;
+      height: 70px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .sidenav {
+    &--toggle {
+      svg {
+        font-size: 2rem;
+      }
+    }
+
+    &--primary {
+      z-index: 3;
+
+      position: fixed;
+      top: 4rem;
+      right: 0px;
+      height: 0%;
+      width: 100%;
+      overflow: hidden;
+      background-color: $bg-secondary;
+
+      .nav {
+
+        &--items {
+          li {
+            a {
+              color: $color-sec-1;
+            }
+          }
+
+          // flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 100px) {
+  .toggle {
+    &__nav {
+      position: fixed;
+      display: grid;
+      place-items: center;
+      z-index: 5;
+      background-color: $color-sec-1;
+    }
+  }
+
+  .mobile {
+    &__nav {}
+  }
+
+  .nav {
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+
+      li {
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    &__container {
+      z-index: 4;
+      background-color: transparent;
+      width: 100%;
+      display: flex;
+      position: fixed;
+    }
+
+    &__items {
+      display: flex;
+      align-items: center;
+      height: auto;
+    }
+
+    a,
+    &__item {
+      text-decoration: none;
+      font-family: $header-family;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    &__mark {
+      
+      svg {
+        
+        height: 2.5rem;
+      }
+      
+    }
+
+  }
+}
+
+// 700px and up
+@media screen and (min-width: $media-small) {}
+
+// 960px 
+
+@media screen and (min-width: $media-med) {}
+
+@media screen and (min-width: $media-large) {
+  .nav {
+    &__container {
+    
+    }
+  }
+
+
+}
+
+@media screen and (min-width: $media-xlarge) {
+  .nav {
+    &__container {
+        }
+  }
+}

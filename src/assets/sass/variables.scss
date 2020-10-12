@@ -1,0 +1,103 @@
+
+/***
+**
+** MEDIA QUERIES & BREAKPOINTS
+** 
+**
+***/
+
+/***
+**
+** BreakPoints 
+**
+**
+***/
+
+$media-small : 750px;
+$media-med   : 960px;
+$media-large : 1200px;
+$media-xlarge: 1400px;
+
+
+
+
+/***
+**
+** COLOR
+**
+**
+***/
+
+/***
+**
+** COLOR
+**
+**
+***/
+/***
+** Core Colors
+***/
+$color-pri-1: #F2F0EE;
+$color-sec-1:   #393832;
+$color-tri-1: #38766E;
+$color-qur-1: #FFC861;
+// $color-sec-2: 
+
+/***
+** Grey Scale
+***/
+
+$color-light : #FFFFFF;
+$color-grey-1: #F4F4F5;
+$color-grey-2: #EBEBEC;
+$color-grey-3: #D7D7D7;
+$color-grey-4: #ACACAF;
+$color-grey-5: #7F7F84;
+$color-grey-6: #525254;
+$color-grey-7: #38383A;
+$color-grey-8: #1D1D1E;
+$color-dark : #0A0A0A;
+
+
+$primary-type-color: $color-grey-6;
+// $secondary-type-color:
+
+// Light theme
+$bg-primary: $color-pri-1;
+$bg-secondary: $color-sec-1;
+
+
+$primary-type-color: $color-grey-8;
+$secondary-type-color: $color-tri-1;
+
+
+/***
+**
+** TYPOGRAPHY
+**
+**
+***/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;1&display=swap');
+
+$type-base-size: 18px;
+
+// body variables 
+$base-family     : 'Montserrat', sans-serif;
+$base-line-height: 1.3;
+$base-weight     : 500;
+
+// header variables 
+$header-family     : 'Montserrat', sans-serif;
+$header-base-size  : $type-base-size;
+$header-line-height: $base-line-height;
+$header-weight     : 400;
+$type-scaler       : 1.33;
+
+$display-family: $header-family;
+
+
+
+
+
+
