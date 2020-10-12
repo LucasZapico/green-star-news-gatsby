@@ -7,10 +7,10 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "lu",
-    description: "A collection of styles used alot by Lucas",
+    title: "Green-Star_Business-News",
+    description: "A business news website built by Lucas Zapico ",
     author: "@NorthernWindSouthernSun",
-    siteUrl: "https://lucaszapico.space",
+    siteUrl: "https://green-star-news.lucaszapico.space",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -21,6 +21,13 @@ module.exports = {
     "gatsby-plugin-lodash",
     `gatsby-transformer-remark`,
     "gatsby-plugin-catch-links",
+
+    {
+      resolve: "gatsby-plugin-favicon",
+      options: {
+        logo: "./src/assets/images/favicon.png",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

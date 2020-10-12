@@ -10,8 +10,11 @@ import { union } from "lodash"
 import { filter } from "lodash"
 
 const HomePage = ({ data }) => {
-  // console.log(data.pages.nodes.filter(p => p.context.article !== null))
-  const arts = data.pages.nodes.filter(p => p.context.article !== null)
+  console.log(data.pages.nodes)
+  const test = data.pages.nodes.filter(p => p.context !== null )
+  console.log('test', test)
+  const arts = test.filter(p => p.context.article != null )
+  console.log('art', arts)
   const sourceList = getSources(arts)
   const featured = arts.splice(0, 1)
   const latest = arts.splice(0, 2)
