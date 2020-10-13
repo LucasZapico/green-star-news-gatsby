@@ -1,106 +1,47 @@
-require('dotenv/config');
+require("dotenv/config")
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const axios = require('axios');
+const axios = require("axios")
+const querystring = require('querystring');
 
-
-const makeURL = (country, category) => {
-  return `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${process.env.NEWS_API_KEY}`;
+const makeNewsAPIURL = (country, category) => {
+  return `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${process.env.NEWS_API_KEY}`
 }
 
-const getTopHeadlines = () =>
-  axios.get(makeURL('us', 'business')).then(({data}) => {
-      return data.articles
-  });
+const getTopHeadlines = async (country, category) =>
+  await axios.get(makeNewsAPIURL(country, category)).then(({ data }) => {
+    data.articles.forEach(a => a['category'] = category)
+    return data.articles
+  }).catch(err => {console.log(err)})
+    
+
 
 
 // Promise API
-exports.createPages = async ({actions: {createPage}, reporter}) => {
-  console.log('create api pages ran')
-  const Articles = await getTopHeadlines()
-  // todo: create all article pages
-  // createPage({
-  //   path: `/`,
-  //   component: path.resolve(`src/templates/default.js`),
-  //   context: {Articles}
-  // })
-
+exports.createPages = async ({ actions: { createPage }, reporter }) => {
+  console.log("create api pages ran")
+  
+  const [articlesOne, articlesTwo   ] = await Promise.all( [getTopHeadlines('us', 'business'), getTopHeadlines('us', 'technology')] )
+  const Articles = articlesOne.concat(articlesTwo)
   // Handle errors
   if (Articles.errors) {
     reporter.panicOnBuild(`Error while running API query.`)
     return
   }
 
-  console.log('article data', Articles)
   Articles.forEach((article, index) => {
+    let slug = article.title
+    slug = slug.replace(/[^a-z0-9+]+/gi, "-")
+    console.log(slug)
     createPage({
-      path: `/business/${index}/`,
-      component: require.resolve('./src/templates/articleTemplate.js'),
-      context: { article }
-    });
+      path: `/${article.category}/${slug}/`,
+      component: require.resolve("./src/templates/articleTemplate.js"),
+      context: { article },
+    })
+  })
+  createPage({
+    path: `/articles/`,
+    component: require.resolve("./src/templates/articlesTemplate.js"),
+    context: { Articles },
   })
 }
-
-
-// // Log out information after a build is done
-// exports.onPostBuild = ({ reporter }) => {
-//   reporter.info(`Your Gatsby site has been built!`)
-// }
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
-//   if (node.internal.type === `MarkdownRemark`) {
-//     const value = createFilePath({ node, getNode })
-//     createNodeField({
-//       name: `path`,
-//       node,
-//       value,
-//     })
-//   }
-// }
-
-
-
-// exports.createPages = async ({ actions, graphql, reporter }) => {
-//   const { createPage } = actions
-
-//   const Template = path.resolve(`src/templates/default.js`)
-
-//   const result = await graphql(`
-//     {
-//       allMarkdownRemark(
-//         filter: { frontmatter: { draft: { eq: false } } }
-//         sort: { order: DESC, fields: [frontmatter___date] }
-//         limit: 1000
-//       ) {
-//         edges {
-//           node {
-//             id
-//             html
-//             frontmatter {
-//               path
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   // Handle errors
-//   if (result.errors) {
-//     reporter.panicOnBuild(`Error while running GraphQL query.`)
-//     return
-//   }
-//   const posts = result.data.allMarkdownRemark.edges
-
-//   posts.forEach(({ node }, index) => {
-//     createPage({
-//       path: node.frontmatter.path,
-//       component: Template,
-//       context: {
-//         prev: index === 0 ? null : posts[index - 1].node,
-//         next: index === posts.length - 1 ? null : posts[index + 1].node,
-//       }, // additional data can be passed via context
-//     })
-//   })
-// }
