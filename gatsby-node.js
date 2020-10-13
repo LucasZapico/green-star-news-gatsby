@@ -39,9 +39,5 @@ exports.createPages = async ({ actions: { createPage }, reporter }) => {
       context: { article },
     })
   })
-  createPage({
-    path: `/articles/`,
-    component: require.resolve("./src/templates/articlesTemplate.js"),
-    context: { Articles },
-  })
+  
 }

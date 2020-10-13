@@ -18,7 +18,7 @@ body, .app {
 }
 
 main {
-    height: 100%;
+    min-height: 90vh;
     padding-top: 100px;
     background-color: $color-light;
 }
@@ -46,7 +46,7 @@ main {
 }
 
 .article-main {
-    &__container {
+    &.container {
         $type-scaler: 1.2; //$type-scaler;
         $header-base-size: $type-base-size; //16px;
         @include typeScales($header-base-size, $type-scaler);
@@ -57,6 +57,15 @@ main {
 
 // 100px and up 
 @media screen and (min-width: 100px) {
+    .article-main {
+        &.container {
+            $type-scaler: 1.1; //$type-scaler;
+            $header-base-size: $type-base-size; //16px;
+            @include typeScales($header-base-size, $type-scaler);
+            padding: .5rem;
+        }
+    }
+    
     .header {
         &__container {
             padding: 1rem;

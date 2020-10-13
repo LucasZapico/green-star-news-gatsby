@@ -6,11 +6,11 @@ const ArticleCard = ({ data }) => {
   const { article } = data.context
   return (
     <Link swipe="entry" to={data.path} className="card article padding__all">
-      <div class="card__header">
-        <div class="card__subtitle">{article.category}</div>
-        <div class="card__title">{article.source.name}</div>
+      <div className="card__header">
+        <div className="card__subtitle">{article.category}</div>
+        <div className="card__title">{article.source.name}</div>
       </div>
-      <div class="card__body body__default">{article.title}</div>
+      <div className="card__body body__default">{article.title}</div>
     </Link>
   )
 }

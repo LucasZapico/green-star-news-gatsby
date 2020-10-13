@@ -1,7 +1,14 @@
-# Luca SASS Framework 
+# Green Star News 
+
+## Enhancements and Ideas 
+
+- Adding source filtering 
+- add disclaimer about articles not being complete 
+- sidenav menu 
+- add technolgies used toggle
 
 ## list 
 
-- [ ] typography
-- [ ] color 
-- [ ] 
+- [ x ] typography
+- [ x ] color 
+- [  ] 
