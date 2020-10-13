@@ -6,6 +6,8 @@
 - add disclaimer about articles not being complete 
 - sidenav menu 
 - add technolgies used toggle
+- add readme 
+
 
 ## list 
 
