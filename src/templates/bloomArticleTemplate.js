@@ -6,15 +6,15 @@ import Layout from '../components/Layout'
 export default function Template(props ) {
   console.log('pages', props)
   const {article} = props.pageContext
-  console.log(article)
+  console.log(article.re)
   return (
       <Layout>
     <div className="">
       <Helmet title={`${article.title}`} />
-      <div className="article-main__container char__readable center">
-        <h1 className="h2">{article.title}</h1>
+      <div className="t">
+        <h1>{article.title}</h1>
         <div className="">
-          {article.content}
+          {/* {article.content} */}
         </div>
       </div>
     </div>
