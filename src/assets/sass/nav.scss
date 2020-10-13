@@ -1,39 +1,4 @@
 @media screen and (min-width: 100px) {
-    .toggle {
-        &__nav {
-            position: fixed;
-            display: grid;
-            place-items: center;
-            z-index: 5;
-            width: 50px;
-            height: 50px;
-            background-color: $color-sec-1;
-            border-radius: 50px;
-            margin-left: .5rem;
-            margin-top: .5rem;
-
-        }
-    }
-
-    .mobile {
-        &__nav {
-
-
-            .nav {
-                height: 100vh;
-                flex-direction: column;
-
-                &__items {
-                    flex-direction: column;
-
-                    }
-                }
-
-                &__item {}
-            }
-        }
-    }
-
     .nav {
         z-index: 4;
         display: flex;
@@ -45,22 +10,22 @@
         padding-right: 1rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
-
+    
         ul {
             list-style: none;
             margin: 0px;
             padding: 0px;
-
+    
             li {
                 padding: 0px;
                 margin: 0px;
             }
         }
-
+    
         a {
             text-decoration: none;
         }
-
+    
         &__container {
             z-index: 4;
             background-color: transparent;
@@ -71,31 +36,46 @@
             display: flex;
             position: fixed;
         }
-
+    
         &__items {
             display: flex;
             align-items: center;
             height: auto;
         }
-
+    
         a,
         &__item {
+            
             text-decoration: none;
             font-family: $header-family;
             padding-left: 1rem;
             padding-right: 1rem;
             padding-top: 1rem;
             padding-bottom: 1rem;
+            background-color: pink;
+            cursor: pointer;
+            display: flex;
         }
-
+    
         &__mark {
             svg {
                 height: 2.5rem;
             }
         }
-
+    
     }
+    .sidenav {
+        &__container {
+            padding-top: 100px;
+            padding-left: 1rem;
+        }
+    }
+
 }
+
+
+
+
 
 // 700px and up
 @media screen and (min-width: $media-small) {}
@@ -104,28 +84,6 @@
 
 @media screen and (min-width: $media-med) {}
 
-@media screen and (min-width: $media-large) {
-    .nav {
-        &__container {
-            max-width: 80%;
-            margin-left: 10%;
+@media screen and (min-width: $media-large) {}
 
-
-
-        }
-    }
-
-
-}
-
-@media screen and (min-width: $media-xlarge) {
-    .nav {
-        &__container {
-            max-width: 70%;
-            margin-left: 15%;
-
-
-
-        }
-    }
-}
+@media screen and (min-width: $media-xlarge) {}

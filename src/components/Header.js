@@ -12,34 +12,8 @@ const Header = ({ siteTitle }) => {
   const [showMenu, setShowMenu] = useState(false)
   return (
     <header className="header">
-      
-        {width && width < 800 ? (
-           <>
-            
-           <div className="toggle toggle__nav" onClick={() => setShowMenu(!showMenu)}>
-             {!showMenu ? (
-               <IoIosMenu  />
-             ) : (
-               <IoIosClose/>
-             )}
-           </div>
-           {showMenu ? (
-             <div className="mobile__nav">
-               <Navigation width={width} />
-             </div>
-           ) : (
-             undefined
-           )}
-         </>
-          
-        ) : (
-          <>
-            
-          <Navigation width={width} />
+      <Navigation width={width} />
         
-      </>
-        )}
-      
     </header>
   )
 }
