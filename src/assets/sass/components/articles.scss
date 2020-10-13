@@ -1,82 +1,181 @@
-@media screen and (min-width: 100px) {}
+.card {
+  display: block;
+}
+a.card {
+  text-decoration: none;
+}
 
-// 700px and up
-@media screen and (min-width: $media-small) {
+.article {
+  border: 1px solid $color-grey-6;
 
   .card {
-    display: block;
-    text-decoration: none;
-  }
-  .article {
-    &__container {
-      grid-column: 1/span 3;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      gap: 1rem;
-    }
-    &__card {
-      // margin-right: 1rem;
-      padding: 1rem;
-      
-      border: 1px solid $color-grey-6;
+    &__header {}
+
+    &__subtitle {
+      color: $color-tri-1;
     }
 
-    &__content {}
-
-    &__category {
-      color: $secondary-type-color;
-    }
-
-    &__featured {
-      height: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
-    &__header {
-      
-     
-    }
-    &__source {
+    &__title {
       font-weight: 800;
       text-transform: uppercase;
       border-bottom: dashed $color-tri-1 1px;
     }
+    &__body {
+      padding-top: 1rem;
+    }
   }
 
-  .featured {
-    border: 1px solid $color-tri-1;
-    &__img {
-      grid-column: 1 / span 2;
-      grid-row: 1 / span 4;
-      height: 100%;
-      img {
-
+  &__featured {
+    .card {
+      &__img {
+        height: 200px;
+        background-color: $color-tri-1;
+        overflow: hidden;
       }
-
+      &__content {
+        
+      }
     }
-
-    &__content {
-      grid-column: 3 / span 4;
-      grid-row: 1 / span 4;
-
-    }
-
-    &__category {}
-
-    &__header {
-      color: $color-grey-1;
-      background-color: $color-tri-1;
-
+  }
+  &__hero {
+    .card {
+      &__img {
+        height: 400px;
+        background-color: $color-tri-1;
+        overflow: hidden;
+      }
+      &__content {
+        
+      }
+      &__header {
+        min-height: 100px;
+        background-color: $color-tri-1;
+        color: $color-light;
+      }
     }
   }
 }
 
-// 960px 
+// 100px and up
+@media screen and (min-width: 100px) {
+  .section {
+    &__title {
+      grid-column: 1 / span 1;
+    }
+  }
+  .category.wrapper {
+    max-height: 500px;
+    overflow: scroll;
+  }
+  .category__section,.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    
+  }
 
-@media screen and (min-width: $media-med) {}
+  .card {
+    grid-column: 1 / span 1;
+  }
+}
 
-@media screen and (min-width: $media-large) {}
+// 700px and up
+@media screen and (min-width: $media-small) {
+  .section {
+    &__title {
+      grid-column: 1 / span 2;
+    }
+  }
+  .category.wrapper {
+    max-height: 500px;
+    overflow: scroll;
+  }
+
+  .category__section,.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+
+  .card:nth-of-type(2n) {
+    grid-column: 1 / span 1;
+  }
+
+  .card:nth-of-type(2n-1) {
+    grid-column: 2 / span 2;
+  }
+
+  .card.article__featured {
+    grid-column: 1 / span 4;
+    grid-row: 1/ span 2;
+  }
+}
+
+// 960px
+@media screen and (min-width: $media-med) {
+  .section {
+    &__title {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  .category__section,.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .card:nth-of-type(2n - 1) {
+    grid-column: 3 / span 4;
+  }
+
+  .card:nth-of-type(2n) {
+    grid-column: 1 / span 2;
+  }
+
+  .card.article__featured {
+    grid-column: 1 / span 4;
+    grid-row: 1/ span 2;
+  }
+}
+
+@media screen and (min-width: $media-large) {
+  .section {
+    &__title {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  .category__section,.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .card {
+    &:nth-of-type(2n - 1) {
+      grid-column: auto;
+    }
+
+    &:nth-of-type(2n) {
+      grid-column: auto;
+    }
+
+    &.article__featured {
+      grid-column: 1 / span 2;
+      grid-row: 1/ span 2;
+    }
+  }
+
+  .container {
+    &__content {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+  }
+}
 
 @media screen and (min-width: $media-xlarge) {}
